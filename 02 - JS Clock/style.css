@@ -1,0 +1,80 @@
+body {
+  height: 100vh;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* clock container */
+
+.clock {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  padding: 2rem;
+  background: #333;
+  position: relative;
+
+}
+
+/* clock gradient border */
+
+.clock::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -15px;
+  border-radius: inherit;
+  background-image: linear-gradient(45deg, purple, orange);
+}
+
+/* pointers cover */
+
+.clock::before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background-image: linear-gradient(45deg, rgb(208, 13, 208), purple);
+  border-radius: 50%;
+  top: calc(50% - 7.5px);
+  left: calc(50% - 7.5px);
+  z-index: 1;
+}
+
+/* pointers */
+
+.pointer {
+  height: 6px;
+  border-radius: 15px;  
+  position: absolute;
+  top: 50%;
+  right: 50%;
+
+  transform: rotate(90deg);
+  transform-origin: 100%;
+  transition: all .05s;
+  transition-timing-function: cubic-bezier(.1, 2.7, .58, 1);
+}
+
+.hours {
+  width: 35%;
+  background-image: linear-gradient(45deg, rgb(252, 182, 53), orange);
+
+}
+
+.minutes {
+  width: 45%;
+  background-image: linear-gradient(45deg, rgb(208, 13, 208), purple);
+}
+
+.seconds {
+  height: 4px;
+  width: 40%;
+  background: #fff;
+}
