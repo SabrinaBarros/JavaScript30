@@ -1,80 +1,81 @@
 body {
-  height: 100vh;
-  background-color: #333;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  background-color: #333;
+  border-top: 3px solid #ffa500;
+  box-sizing: border-box;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
 }
 
 /* clock container */
 
 .clock {
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
-  padding: 2rem;
   background: #333;
+  border-radius: 50%;
+  height: 250px;
+  padding: 2rem;
   position: relative;
-
+  width: 250px;
 }
 
 /* clock gradient border */
 
 .clock::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  margin: -15px;
+  background-image: linear-gradient(45deg, purple, #ffa500);
   border-radius: inherit;
-  background-image: linear-gradient(45deg, purple, orange);
+  bottom: 0;
+  content: "";
+  left: 0;
+  margin: -15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
 }
 
 /* pointers cover */
 
 .clock::before {
-  content: "";
-  position: absolute;
-  height: 15px;
-  width: 15px;
   background-image: linear-gradient(45deg, rgb(208, 13, 208), purple);
   border-radius: 50%;
-  top: calc(50% - 7.5px);
+  content: "";
+  height: 15px;
   left: calc(50% - 7.5px);
+  position: absolute;
+  top: calc(50% - 7.5px);
+  width: 15px;
   z-index: 1;
 }
 
 /* pointers */
 
 .pointer {
-  height: 6px;
   border-radius: 15px;  
+  height: 6px;
   position: absolute;
-  top: 50%;
   right: 50%;
-
-  transform: rotate(90deg);
+  top: 50%;
   transform-origin: 100%;
-  transition: all .05s;
+  transform: rotate(90deg);
   transition-timing-function: cubic-bezier(.1, 2.7, .58, 1);
+  transition: all .05s;
 }
 
 .hours {
-  width: 35%;
   background-image: linear-gradient(45deg, rgb(252, 182, 53), orange);
+  width: 35%;
 
 }
 
 .minutes {
-  width: 45%;
   background-image: linear-gradient(45deg, rgb(208, 13, 208), purple);
+  width: 45%;
 }
 
 .seconds {
+  background: #fff;
   height: 4px;
   width: 40%;
-  background: #fff;
 }
