@@ -7,6 +7,13 @@ body {
   height: 100vh;
   justify-content: center;
   margin: 0;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
 }
 
 /* clock container */
@@ -78,4 +85,44 @@ body {
   background: #fff;
   height: 4px;
   width: 40%;
+}
+
+/* footer */
+
+.footer {
+  border-bottom: #ffa500 solid 3px;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: 'Courier Prime', monospace;
+  font-size: 18px;
+  margin-top: 16px;
+  padding: 8px;
+  text-align: center;
+  width: 100vw;
+}
+
+/* footer__link */
+
+.footer__link {
+  color: orange;
+  text-decoration-line: underline;
+  transition: opacity .4s;
+}
+
+.footer__link:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
+/* Visual Hidden */
+
+.visual-hidden {
+  display: block;
+  height: 0;
+  left: -9999px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  top: -9999px;
+  width: 0;
 }
